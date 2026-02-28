@@ -1,0 +1,54 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+.env/
+.env
+
+# =========================
+# HuggingFace / Model Cache
+# =========================
+.cache/
+huggingface/
+hf_cache/
+*.safetensors
+
+# =========================
+# Reports / Outputs
+# =========================
+reports/
+logs/
+outputs/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# VSCode / Codespaces
+# =========================
+.vscode/
+.devcontainer/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Temporary files
+# =========================
+*.log
+*.tmp
