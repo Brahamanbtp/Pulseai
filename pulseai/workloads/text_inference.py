@@ -61,13 +61,13 @@ class TextInferenceWorkload:
     # ==========================================================
 
     def _load_model(self):
-        """
-        Load tokenizer + model once.
-        """
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.MODEL_NAME
         )
+
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
 
         self.model = AutoModelForCausalLM.from_pretrained(
             self.MODEL_NAME
@@ -76,7 +76,6 @@ class TextInferenceWorkload:
         self.model.to(self.device)
         self.model.eval()
 
-        # Disable gradients for inference benchmarking
         torch.set_grad_enabled(False)
 
     # ==========================================================
